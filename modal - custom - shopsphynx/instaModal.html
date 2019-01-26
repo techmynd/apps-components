@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Modal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="instaModal.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="margin: 0; padding: 0;">
+
+    
+    
+    <p style="padding:20px;">Following box is a placeholder and is mimicking the single slide of slick slider that is already implemented in site.<br>
+    Hover over it to see overlay and click it to open modal window.<br>
+    This is for demo purpose and will be implemented on each slide in slider that is in website.<br><br>
+    FUNCTIONS<br><br>
+    showInstaModal();<br>
+    closeInstaModal()
+    </p>
+    
+
+
+
+
+    <div class="slick-slide insta-detail">
+    
+        <!--place this box below in loop and inside of slick-slide div of slider-->
+        <div class="slide-overlay">
+            <div class="title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis consectetur exercitationem quos explicabo consequatur aut, ut dolorum earum nemo eligendi molestiae dolore fuga iste vero modi quis ex porro quaerat!</div>
+            <div class="tags">#Lorem #ipsum #dolor</div>
+        </div>
+
+    </div>
+
+
+
+    <!--copy from here-->
+    <div class="insta-modal">
+        <div class="im-header">
+            <div class="insta-detail-close"></div>
+            <div class="im-title">
+                <i class="fa fa-instagram fa-fw"></i>
+                <div class="title-text">
+                    <a class="handle" href="#">Instagramhandle</a>
+                    <div class="location">Los Angeles, California</div>
+                </div>
+            </div>
+        </div>
+        <div class="insta-modal-body">
+            <img src="image.jpg" class="img-insta">
+        </div>
+        <div class="im-footer">
+            <div class="insta-text">
+                Day 4 of 10 of our Holiday in Europe. As you saw from my last post, it was a good day #fashion10x10
+            </div>
+            <div class="insta-date">December 17</div>
+        </div>
+    </div>
+
+    <div class="insta-modal-backdrop"></div>
+
+    <!--copy ends here-->
+
+    
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+
+    <!--dont include jquery // include script below-->
+    <script src="instaModal.min.js"></script>
+    
+  </body>
+</html>
