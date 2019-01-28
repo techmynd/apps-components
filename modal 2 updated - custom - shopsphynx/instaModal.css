@@ -1,0 +1,323 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+.insta-detail {
+  width: 340px;
+  height: 340px;
+  background-color: #ccc;
+  margin-left: 40px;
+  margin-top: 40px;
+}
+
+@media all and (max-width: 480px) {
+  .insta-detail {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.slick-slide {
+  position: relative;
+  cursor: pointer;
+}
+
+.slick-slide .slide-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.slick-slide .slide-overlay .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-self: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.slick-slide .slide-overlay .tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-self: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.slick-slide:hover .slide-overlay {
+  opacity: 1;
+}
+
+.slick-slide:hover .slide-overlay .title {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.slick-slide:hover .slide-overlay .tags {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.insta-modal {
+  font-family: "hkgrotesk",san-serif;
+  z-index: 10004;
+  position: absolute;
+  width: 650px;
+  min-height: 100px;
+  background-color: #fff;
+  left: 50%;
+  top: 40px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-bottom: 40px;
+  display: none;
+}
+
+@media all and (max-width: 900px) {
+  .insta-modal {
+    width: auto;
+    left: 60px;
+    right: 60px;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.insta-modal .im-header {
+  position: relative;
+  padding: 10px;
+  text-align: center;
+}
+
+.insta-modal .im-header .im-title {
+  padding-right: 20px;
+}
+
+.insta-modal .im-header .im-title::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.insta-modal .im-header .im-title .fa {
+  float: left;
+  font-size: 37px;
+}
+
+.insta-modal .im-header .im-title .title-text {
+  text-align: left;
+  float: left;
+  margin-left: 5px;
+}
+
+.insta-modal .im-header .im-title .title-text .handle {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.insta-modal .im-header .im-title .title-text .location {
+  font-size: 13px;
+}
+
+.insta-modal .im-header .insta-detail-close {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.insta-modal .im-header .insta-detail-close:hover {
+  opacity: 1;
+}
+
+.insta-modal .im-header .insta-detail-close::before, .insta-modal .im-header .insta-detail-close::after {
+  position: absolute;
+  left: 15px;
+  content: '';
+  height: 20px;
+  width: 2px;
+  background-color: #333;
+}
+
+.insta-modal .im-header .insta-detail-close::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.insta-modal .im-header .insta-detail-close::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.insta-modal .insta-modal-body {
+  background-color: #ccc;
+  text-align: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.insta-modal .insta-modal-body .img-insta {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.insta-modal .im-footer {
+  padding: 10px;
+  text-align: center;
+}
+
+.insta-modal .im-footer .insta-text {
+  max-width: 400px;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 22px;
+  color: #666;
+}
+
+.insta-modal .im-footer .insta-date {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+
+.insta-modal-backdrop {
+  display: none;
+  z-index: 10003;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.insta-arrow-left {
+  position: absolute;
+  left: -100px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10005;
+  opacity: 0.7;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media all and (max-width: 900px) {
+  .insta-arrow-left {
+    left: -50px;
+  }
+}
+
+.insta-arrow-left:hover {
+  opacity: 1;
+}
+
+.insta-arrow-left img {
+  max-width: 100%;
+}
+
+@media all and (max-width: 900px) {
+  .insta-arrow-left img {
+    max-width: 40px;
+  }
+}
+
+.insta-arrow-right {
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10005;
+  opacity: 0.7;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media all and (max-width: 900px) {
+  .insta-arrow-right {
+    right: -50px;
+  }
+}
+
+.insta-arrow-right:hover {
+  opacity: 1;
+}
+
+.insta-arrow-right img {
+  max-width: 100%;
+}
+
+@media all and (max-width: 900px) {
+  .insta-arrow-right img {
+    max-width: 40px;
+  }
+}
+/*# sourceMappingURL=instaModal.css.map */
