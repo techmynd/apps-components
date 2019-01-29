@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>jQuery Chat Box</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>jQuery Chat Box!</h1>
+      <div class="box"><div class="inner"></div></div>
+      <form><input class="form-control" placeholder="Type & hit enter" /></form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("input").on("change", function() {
+          this.value = $.trim(this.value);
+        });
+
+        $("form").submit(function(e) {
+          e.preventDefault();
+          var newMessage = $(".form-control").val();
+          if (newMessage !== "") {
+            var postMessage = "<p class='message'>" + newMessage + "</p>";
+            // add message
+            $(".box .inner").append(postMessage);
+
+            // move scroll to end after message is submitted
+            var height = $(".box")[0].scrollHeight;
+            $(".box").scrollTop(height);
+
+            // clear form
+            $(".form-control").val("");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

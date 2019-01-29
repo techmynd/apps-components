@@ -1,0 +1,29 @@
+.box {
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+.box .inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  min-height: min-content;
+  flex-basis: 100%;
+  height: 100%;
+  align-content: flex-end;
+}
+.box .inner .message {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+  margin: 2px;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+}
+input {
+  border-radius: 3px;
+}
